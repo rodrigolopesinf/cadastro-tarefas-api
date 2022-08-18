@@ -1,0 +1,34 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Cadastro.Tarefas.Core/1.0.0": {
+        "dependencies": {
+          "SonarAnalyzer.CSharp": "8.43.0.51858"
+        },
+        "runtime": {
+          "Cadastro.Tarefas.Core.dll": {}
+        }
+      },
+      "SonarAnalyzer.CSharp/8.43.0.51858": {}
+    }
+  },
+  "libraries": {
+    "Cadastro.Tarefas.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SonarAnalyzer.CSharp/8.43.0.51858": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3izLCHSw0zqjbDfcJjAY3m75Goi5pcOOYss1HQGjgwWmAncddNJifIpT2KnOlE6GxKwf26TkgapxhJlUR8iosQ==",
+      "path": "sonaranalyzer.csharp/8.43.0.51858",
+      "hashPath": "sonaranalyzer.csharp.8.43.0.51858.nupkg.sha512"
+    }
+  }
+}
