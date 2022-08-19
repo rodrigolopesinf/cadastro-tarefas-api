@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Cadastro.Tarefas.Api/bin/Debug/net6.0
+/Cadastro.Tarefas.Api/obj
+/Cadastro.Tarefas.Core/bin/Debug/net6.0
+/Cadastro.Tarefas.Core/obj
