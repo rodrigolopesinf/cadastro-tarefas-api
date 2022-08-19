@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cadastro.Tarefas.Core\Cadastro.Tarefas.Core.csproj" />
+    <ProjectReference Include="..\Cadastro.Tarefas.Infra\Cadastro.Tarefas.Infra.csproj" />
   </ItemGroup>
 
 </Project>

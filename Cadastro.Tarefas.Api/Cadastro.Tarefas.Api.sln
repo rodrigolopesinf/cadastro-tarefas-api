@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.Tarefas.Api", "Cadastro.Tarefas.Api\Cadastro.Tarefas.Api.csproj", "{ED9C065E-72B2-49F9-8EC1-9A0D139FA746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastro.Tarefas.Api", "Cadastro.Tarefas.Api\Cadastro.Tarefas.Api.csproj", "{ED9C065E-72B2-49F9-8EC1-9A0D139FA746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.Tarefas.Core", "Cadastro.Tarefas.Core\Cadastro.Tarefas.Core.csproj", "{F6553569-B426-4454-9611-50C84E847AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastro.Tarefas.Core", "Cadastro.Tarefas.Core\Cadastro.Tarefas.Core.csproj", "{F6553569-B426-4454-9611-50C84E847AD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.Tarefas.Infra", "Cadastro.Tarefas.Infra\Cadastro.Tarefas.Infra.csproj", "{921A88BB-1AA4-4755-9950-363ABC12327F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F6553569-B426-4454-9611-50C84E847AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6553569-B426-4454-9611-50C84E847AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6553569-B426-4454-9611-50C84E847AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921A88BB-1AA4-4755-9950-363ABC12327F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921A88BB-1AA4-4755-9950-363ABC12327F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921A88BB-1AA4-4755-9950-363ABC12327F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921A88BB-1AA4-4755-9950-363ABC12327F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
