@@ -8,7 +8,7 @@ namespace Cadastro.Tarefas.Api.Configurations
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
+            services.AddAutoMapper(typeof(DomainToDtoMappingProfile), typeof(RequestToDtoMappingProfile));
         }
     }
 }

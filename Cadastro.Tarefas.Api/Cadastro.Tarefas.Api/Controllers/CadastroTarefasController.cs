@@ -1,4 +1,6 @@
-﻿using Cadastro.Tarefas.Core.DTOs.CadastroTarefas;
+﻿using AutoMapper;
+using Cadastro.Tarefas.Core.DTOs.CadastroTarefas;
+using Cadastro.Tarefas.Core.DTOs.Request.CadastroTarefa;
 using Cadastro.Tarefas.Core.Interfaces.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,10 +9,12 @@ namespace Cadastro.Tarefas.Api.Controllers
 {
     public class CadastroTarefasController : ApiController
     {
+        private readonly IMapper _mapper;
         private readonly ITarefaService _tarefaService;
 
-        public CadastroTarefasController(ITarefaService tarefaService)
+        public CadastroTarefasController(IMapper mapper, ITarefaService tarefaService)
         {
+            _mapper = mapper;
             _tarefaService = tarefaService;
         }
 
@@ -28,7 +32,7 @@ namespace Cadastro.Tarefas.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("tarefa/{id:guid}")]
+        [HttpGet("tarefa/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var tarefa = await _tarefaService.GetById(id);
@@ -41,14 +45,16 @@ namespace Cadastro.Tarefas.Api.Controllers
         }
 
         [HttpPost("tarefa")]
-        public async Task<IActionResult> Post([FromBody] TarefasDto tarefaDto)
+        public async Task<IActionResult> Post([FromBody] TarefaRequestAdd tarefa)
         {
+            var tarefaDto = _mapper.Map<TarefasDto>(tarefa);
             return !ModelState.IsValid ? CustomResponse(ModelState) : CustomResponse(await _tarefaService.Save(tarefaDto));
         }
 
         [HttpPut("tarefa")]
-        public async Task<IActionResult> Put([FromBody] TarefasDto tarefaDto)
+        public async Task<IActionResult> Put([FromBody] TerefaRequestUpdate tarefa)
         {
+            var tarefaDto = _mapper.Map<TarefasDto>(tarefa);
             return !ModelState.IsValid ? CustomResponse(ModelState) : CustomResponse(await _tarefaService.Update(tarefaDto));
         }
 

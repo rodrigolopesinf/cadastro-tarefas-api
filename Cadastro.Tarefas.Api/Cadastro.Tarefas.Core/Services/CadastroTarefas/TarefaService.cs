@@ -28,7 +28,7 @@ namespace Cadastro.Tarefas.Core.Services.CadastroTarefas
             return _mapper.Map<TarefasDto>(await _repository.GetById(id));
         }
 
-        public Task<ValidationResult> Save(TarefasDto tarefaDto)
+        public async Task<ValidationResult> Save(TarefasDto tarefaDto)
         {
             TarefaValidator validator = new TarefaValidator();
             var tarefa = _mapper.Map<Tarefa>(tarefaDto);
@@ -38,23 +38,30 @@ namespace Cadastro.Tarefas.Core.Services.CadastroTarefas
                 _repository.Save(tarefa);
             }
 
-            return tarefaValidate;
+            return tarefaValidate.Result;
         }
 
-        public Task<ValidationResult> Update(TarefasDto tarefaDto)
+        public async Task<ValidationResult> Update(TarefasDto tarefaDto)
         {
             TarefaValidator validator = new TarefaValidator();
-            var tarefa = _mapper.Map<Tarefa>(tarefaDto);
+
+            var tarefaUpdate = await _repository.GetById(tarefaDto.Id);
+            tarefaUpdate.Id = tarefaDto.Id;
+            tarefaUpdate.Titulo = tarefaDto.Titulo;
+            tarefaUpdate.Descricao = tarefaDto.Descricao;
+            tarefaUpdate.DataAtualizacao = tarefaDto.DataAtualizacao;
+
+            var tarefa = _mapper.Map<Tarefa>(tarefaUpdate);
             var tarefaValidate = validator.ValidateAsync(tarefa);
             if (tarefaValidate.Result.IsValid)
             {
                 _repository.Update(tarefa);
             }
 
-            return tarefaValidate;
+            return tarefaValidate.Result;
         }
 
-        public Task<ValidationResult> Remove(int id)
+        public async Task<ValidationResult> Remove(int id)
         {
             TarefaRemoveValidator validator = new TarefaRemoveValidator();
             var tarefaValidate = validator.ValidateAsync(new Tarefa() { Id = id });
@@ -63,7 +70,7 @@ namespace Cadastro.Tarefas.Core.Services.CadastroTarefas
                 _repository.Remove(id);
             }
 
-            return tarefaValidate;
+            return tarefaValidate.Result;
 
         }
 

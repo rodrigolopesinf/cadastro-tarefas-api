@@ -8,37 +8,39 @@ namespace Cadastro.Tarefas.Core.Repositories.CadastroTarefas
     public class TarefaRepository : ITarefaRepository
     {
         protected readonly TarefasContext Db;
-        protected readonly DbSet<Tarefa> DbSet;
 
         public TarefaRepository(TarefasContext context)
         {
             Db = context;
-            DbSet = Db.Set<Tarefa>();
         }
 
         public async Task<IEnumerable<Tarefa>> GetAll()
         {
-            return await DbSet.ToListAsync();
+            return await Db?.Tarefas?.ToListAsync();
         }
 
         public async Task<Tarefa> GetById(int id)
         {
-            return await DbSet.FindAsync(id);
+            return await Db?.Tarefas?
+                .Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            Db.Tarefas.Remove(new Tarefa() { Id = id });
+            Db.SaveChanges();
         }
 
         public void Save(Tarefa task)
         {
-            DbSet.Add(task);
+            Db?.Tarefas?.Add(task);
+            Db?.SaveChanges();
         }
 
         public void Update(Tarefa task)
         {
-            DbSet.Update(task);
+            Db.Tarefas.Update(task);
+            Db.SaveChanges();
         }
 
         public void Dispose()
