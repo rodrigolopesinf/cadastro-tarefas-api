@@ -1,8 +1,3 @@
-#Ponderações finais
-O maior desafio encontrado por mim foi a implementação do entity framework, já que não tenho muita experiência prévia nessa ferramenta. Precisei fazer algumas pesquisas para entender com o fazer a implantação.
-Para o entity framework, utilizei a abordagem Code first.
-
-
 # Desafio Dev .Net Backend
 Este documento descreve o desafio que será utilizado para avaliar os candidatos à vaga de backend na D&D. Caso você tenha chegado aqui por acaso, sinta-se à vontade em realizar o teste, e logo após, contar um pouco mais sobre você através do email (erica.gavazzi@dedtechsolutions.com.br)
 
@@ -53,4 +48,3 @@ Toda tarefa possui:
 
 ## Entrega:
 O candidato deverá criar um fork deste projeto, e a partir deste fork, realizar o desenvolvimento. Favor utilizar o "Readme" do seu fork para descrever as dificuldades técnicas encontradas, como você as superou e, principalmente, como subir o projeto. Ao finalizar, você deverá responder para o e-mail que te enviou esse desafio, com o link do seu fork.
-
